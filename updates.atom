@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+	<title>GW2BBCode Updates</title>
+	<link href="http://gw2bbcode.com"/>
+	<updated>2012-01-25T00:00:00Z</updated>
+	<id>http://gw2bbcode.com</id>
+
+	<entry>
+		<title>gw2bbcode.com launched!</title>
+		<id>http://gw2bbcode.com</id>
+		<updated>2012-01-25T00:04:00Z</updated>
+		<content type="html">
+			&lt;h1&gt;gw2bbcode.com launched!&lt;/h1&gt;
+			&lt;p&gt;Today marks the birth of gw2bbcode.com, the home of the GW2BBCode project.&lt;/p&gt;
+			&lt;p&gt;For now, you can find a preview version of GW2BBCode here, and basic installation and configuration instructions. In the near future, proper documentation will be added.&lt;/p&gt;
+			&lt;p&gt;Other things that are planned are a Twitter account for the project, publication of the project to github and a way for users to comment on, and discuss GW2BBCode. A link to a Guild Wars 2 Guru Forums discussion thread will be added here later as an update to this post.&lt;/p&gt;
+			&lt;p&gt;Update: the ‘official’ &lt;a href="http://www.guildwars2guru.com/forum/gw2bbcode-t26253.html?t=26253" rel="external"&gt;discussion and support thread&lt;/a&gt; can be found on the Guild Wars 2 Guru Forums.&lt;/p&gt;
+			&lt;p&gt;Enjoy!&lt;/p&gt;
+		</content>
+	</entry>
+
+</feed>

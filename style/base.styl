@@ -1,0 +1,640 @@
+@import common
+
+
+/*	****************************************************************************
+**	FONTS
+**	***************************************************************************/
+
+
+/*
+**	Diavlo
+**	A font by Jos Buivenga (exljbris) -> www.exljbris.com
+*/
+
+
+// Diavlo Light
+
+@font-face
+	font-family: Diavlo
+	src: url('../fonts/diavlo_light_ii-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/diavlo_light_ii-webfont.woff') format('woff')
+	font-weight: 300
+	font-style: normal
+
+
+// Diavlo Book
+
+@font-face
+	font-family: Diavlo
+	src: url('../fonts/diavlo_book_ii-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/diavlo_book_ii-webfont.woff') format('woff')
+	font-weight: 400
+	font-style: normal
+
+
+// Diavlo Medium
+
+@font-face
+	font-family: Diavlo
+	src: url('../fonts/diavlo_medium_ii-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/diavlo_medium_ii-webfont.woff') format('woff')
+	font-weight: 500
+	font-style: normal
+
+
+// Diavlo Bold
+
+@font-face
+	font-family: Diavlo
+	src: url('../fonts/diavlo_bold_ii-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/diavlo_bold_ii-webfont.woff') format('woff')
+	font-weight: 600
+	font-style: normal
+
+
+// Diavlo Black
+
+@font-face
+	font-family: Diavlo
+	src: url('../fonts/diavlo_black_ii-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/diavlo_black_ii-webfont.woff') format('woff')
+	font-weight: 800
+	font-style: normal
+
+
+
+/*
+**	Delicious
+**	A font by Jos Buivenga (exljbris) -> www.exljbris.com
+*/
+
+
+// Delicious Regular
+
+@font-face
+	font-family: Delicious
+	src: url('../fonts/delicious-roman-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/delicious-roman-webfont.woff') format('woff')
+	font-weight: 400
+	font-style: normal
+
+
+// Delicious Bold
+
+@font-face
+	font-family: Delicious
+	src: url('../fonts/delicious-bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/delicious-bold-webfont.woff') format('woff')
+	font-weight: 700
+	font-style: normal
+
+
+// Delicious Heavy
+
+@font-face
+	font-family: Delicious
+	src: url('../fonts/delicious-heavy-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/delicious-heavy-webfont.woff') format('woff')
+	font-weight: 800
+	font-style: normal
+
+
+// Delicious Italic
+
+@font-face
+	font-family: Delicious
+	src: url('../fonts/delicious-italic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/delicious-italic-webfont.woff') format('woff')
+	font-weight: 400
+	font-style: italic
+
+
+// Delicious Bold Italic
+
+@font-face
+	font-family: Delicious
+	src: url('../fonts/delicious-bolditalic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/delicious-bolditalic-webfont.woff') format('woff')
+	font-weight: 700
+	font-style: italic
+
+
+// Delicious Small Caps
+
+@font-face
+	font-family: DeliciousSC
+	src: url('../fonts/delicious-smallcaps-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/delicious-smallcaps-webfont.woff') format('woff')
+	font-weight: 400
+	font-style: normal
+	font-variant: small-caps
+
+
+
+/*
+**	Font stacks
+*/
+
+
+font-body    = Delicious, sans-serif
+font-heading = Diavlo, sans-serif
+font-mono    = Monaco, Consolas, monospaced
+
+
+
+/* *****************************************************************************
+** PATHS
+** ****************************************************************************/
+
+
+image-path = '../img/'
+
+
+
+/* *****************************************************************************
+** MISC
+** ****************************************************************************/
+
+
+// heading = h1, h2, h3, h4, h5, h6
+s-heading      = h1
+s-section      = section, article, nav, figure, aside
+s-form-control = input, button, textarea, select
+s-box-shadow   = -webkit-box-shadow, -moz-box-shadow, -ms-box-shadow, -o-box-shadow, box-shadow
+
+
+/* *****************************************************************************
+** GRID
+** ****************************************************************************/
+
+
+gutter-x = 4rem
+gutter-y = 1rem
+
+col-width = gutter-x*6
+
+
+
+/* *****************************************************************************
+** COLORS
+** ****************************************************************************/
+
+
+color-bg = #faf9f7 // white
+color-fg = #555    // grey
+color-a1 = #610b04 // dark red
+color-a2 = #435c60 // green-gray
+
+
+
+/* *****************************************************************************
+** MIXINS
+* *****************************************************************************/
+
+
+// The default gutter, padding-based.
+// If the first argument is true (default false), then the vertical gutter will be full size (same as horizontal gutter).
+// 		Normally, you don't want this (to account for the lack of margin collapsing)
+gutter(full-vertical = false)
+	if full-vertical is true
+		padding: gutter-y*2 gutter-x
+	else
+		padding: gutter-y gutter-x
+
+
+// Makes an element stretch to include the horizontal gutter area (useful for full-width backgrounds)
+// Should normally be used in combination with the gutter() mixin.
+wide()
+	width: 100%
+	margin-left: -(gutter-x)
+
+
+// Same as above, but only applies half the horizontal gutter.
+semi-wide()
+	width: 100%
+	margin-left: -(gutter-x/2)
+
+
+// Quickie for off-screen positioning.
+offscreen()
+	position: absolute
+	left: -9999px
+
+
+
+/*
+**	Links
+*/
+
+
+links(base-color)
+	color = lighten(base-color, 20%)
+	border-color = rgba(base-color, .3)
+
+	a
+		text-decoration: none
+		color: color
+		border-bottom: .1em solid border-color
+
+		&:hover, &:active, &:visited, &:focus
+			border-bottom-color: transparent
+			outline: 0
+
+		&:active, &:focus
+			border-radius: .2em
+			box-shadow: 0 0 .5em 0 color
+
+		&:visited
+			color: inherit
+
+
+
+/*
+** Tabs
+*/
+
+
+tabs()
+	margin: 0 0 gutter-y 0
+	padding: 0
+	list-style: none
+	text-shadow: none
+
+	> li
+		display: inline-block
+		margin: 0 0 1em .3em
+		padding: .1em .5em .1em
+		color: #fff
+		background: color-a1
+		cursor: pointer
+		font-family: font-heading
+		border-radius: .3em
+		position: relative
+		transition: all .7s
+
+		&[aria-selected="true"]
+			box-shadow: 0 0 3px 0 rgba(#000, .3)
+			background: rgba(color-a1, .6)
+			cursor: default
+
+			&:before
+				content: ''
+				position: absolute
+				border: 8px solid transparent
+				border-top-color: rgba(color-a1, .6)
+				left: 50%
+				top: 100%
+				margin: 0 0 0 -6px
+
+		&:first-child
+			margin-left: 0
+
+			&:not([aria-selected="true"])
+				background-image: none
+
+		&:last-child
+			//
+
+		> a
+			color: inherit
+			border-bottom: 0
+
+		&:hover:not([aria-selected="true"]),
+		&:focus:not([aria-selected="true"]),
+		&:active:not([aria-selected="true"])
+			background: rgba(color-a1, .8)
+			transition: all .3s ease .1s
+
+
+
+/*
+**	Buttons
+*/
+
+button()
+	padding: .3em .5em
+	border-radius: 1em 0
+	border: 3px double rgba(color-bg, .2)
+	background: color-a1 no-repeat
+	background: no-repeat -webkit-linear-gradient(top left, lighten(color-a1, 20%), color-a1)
+	background: no-repeat -moz-linear-gradient(to bottom right, lighten(color-a1, 20%), color-a1)
+	background: no-repeat -ms-linear-gradient(to bottom right, lighten(color-a1, 20%), color-a1)
+	background: no-repeat -o-linear-gradient(to bottom right, lighten(color-a1, 20%), color-a1)
+	background: no-repeat linear-gradient(to bottom right, lighten(color-a1, 20%), color-a1)
+	background-clip: padding-box
+	color: color-bg
+	text-shadow: none
+	box-shadow: 0 0 2em 0 rgba(#fff, .8)
+	display: inline-block
+	line-height: 1.2
+	transition: all .3s ease .1s
+
+	> span
+		display: table
+		border-spacing: 0
+		text-shadow: 1px 1px 1px rgba(#000, .5)
+
+	> span:first-child
+		font-weight: 700
+		font-size: 1.1em
+
+	> span:last-child
+		color: rgba(color-bg, .8)
+
+	&:hover, &:focus, &:active
+		border-color: rgba(color-bg, .5)
+		box-shadow: 0 0 4em 0 rgba(#fff, .8)
+
+
+
+/* *****************************************************************************
+** BOILERPLATE
+** ****************************************************************************/
+
+
+/*
+** Text selection
+*/
+
+
+selection(#fff, color-a1)
+
+
+
+/*
+** Elements
+*/
+
+html
+	margin: 0
+	height: 100%
+	background: #fff url(image-path + /bg.png) no-repeat
+	background-size: 100%
+	font-family: font-body
+	font-size: 100%
+	font-size-adjust: .55
+	font-feature-settings: 'liga=1, frac=1'
+	//font-size-adjust: .5
+	color: color-fg
+	line-height: 1.6
+	cursor: default
+	overflow-y: scroll
+	overflow-x: hidden
+	tab-size: 4
+	text-shadow: 1px 1px 1px rgba(#fff, .4)
+
+	// Disable viewport scrollbars when a dialog overlay is active
+	&.has-active-overlay
+		body
+			overflow: hidden
+
+
+body
+	padding: 0
+	margin: 0
+	height: 100%
+	float: left // BFC
+	width: 100%
+
+
+
+// Headings
+h1
+	font-family: font-heading
+	font-size: 2.4em
+	font-weight: normal
+
+
+section, article, nav, figure, aside
+	h1
+		font-size: 2.1rem
+
+	section, article, nav, figure, aside
+		h1
+			font-size: 1.8rem
+
+		section, article, nav, figure, aside
+			h1
+				font-size: 1.5rem
+
+			section, article, nav, figure, aside
+				h1
+					font-size: 1.3rem
+
+
+//
+ul, ol, dl, figure, pre
+	// Don't include tables here: tables establish a BFC, so the margin wouldn't collapse properly.
+	margin: gutter-y*2 0
+	padding: 0
+
+
+p
+	margin: gutter-y 0
+
+
+h1
+	margin: (gutter-y*3.5) 0 (gutter-y*1.5) 0
+	line-height: 1.2
+	color: color-a2
+
+
+ol, ul
+	ol, ul
+		margin: (gutter-y/2) 0 (gutter-y/2) (gutter-x/2)
+
+
+li
+	margin: (gutter-y/2) 0
+
+	&:first-child
+		margin-top: 0
+
+	&:last-child
+		margin-bottom: 0
+
+
+ul > li
+	bullet-1()
+
+
+dt
+	margin-top: gutter-y
+	font-weight: bold
+
+
+pre, code
+	font-family: font-mono
+
+
+pre
+	font-size-adjust: none
+
+
+code
+	border: 1px solid rgba(color-fg, .3)
+	border-radius: .2em
+	padding: .05em .2em
+
+
+pre > code
+	display: block
+	padding: 0
+	position: relative
+	white-space: pre-wrap
+	background: none
+	border: 0
+
+	&:before
+		content: attr(data-language)
+		float: right
+		padding: 0 0 .2em
+		color: rgba(color-fg, .8)
+		font-family: font-heading
+		font-weight: bold
+		text-align: right
+		background-position: bottom
+		background-repeat: no-repeat
+
+
+abbr
+	cursor: help
+
+
+
+// Links and stuff
+links(color-a2)
+
+a img
+	border: 0
+
+
+a.image-link
+	border: 0
+
+
+:focus, :active
+	outline: 0
+
+
+:target
+	> h1
+		// color: color-a2
+		text-shadow: 0 0 .5em yellow
+
+
+
+// Forms
+input, button, textarea, select
+	font-family: inherit
+	font-size: inherit
+	color: inherit
+
+
+label
+	font-weight: bold
+
+
+
+
+/* *****************************************************************************
+** GLOBAL OBJECTS
+** ****************************************************************************/
+
+
+
+
+/*
+** Misc
+*/
+
+[aria-controls]
+	cursor: pointer
+
+
+.gw2bbcode-name
+	font-weight: 600
+
+	.gw2bbcode-name-gw2
+		font-weight: 400
+
+
+
+
+/*
+**	GW2BBCode
+*/
+
+a[data-skill]
+	border: 0
+
+
+
+
+/*
+**	Dialog overlays
+*/
+
+.dialog-overlay
+	position: fixed
+	top: 0
+	left: 0
+	right: 100%
+	bottom: 0
+	background: hsla(0, 0%, 0%, 0)
+	pointer-events: none
+	transition: all .7s ease .1s
+
+	&[aria-hidden="false"]
+		right: 0
+		background: hsla(0, 0%, 0%, .5)
+		pointer-events: auto
+		transition: all .3s ease .1s
+
+
+
+
+/*
+**	Dialogs
+*/
+
+[role="dialog"]
+	gutter(true)
+	position: fixed
+	opacity: 0
+	top: 0
+	bottom: 0
+	left: -100%
+	right: 100%
+	overflow-y: auto
+	margin: (gutter-y*4) 0
+	background: #fff no-repeat
+	box-shadow: 0 0 1em rgba(#000, .3) inset
+	border: solid #fff
+	border-width: 1px 1px 1px 0
+	z-index: 10
+	box-sizing: border-box
+	transition: all .7s ease .1s
+
+	&[aria-hidden="false"]
+		opacity: 1
+		left: 0
+		right: gutter-x
+		transition: all .3s ease .1s
+
+
+
+
+/*
+**	Tab widgets
+*/
+
+
+// Tablists
+
+[role="tablist"]
+	tabs()
+
+
+// Panels
+
+.panels
+
+	.tab-control &
+		> section
+			display: none
+			margin-top: 0
+			transition: height .3s ease .1s
+
+			&[aria-hidden="false"]
+				display: block
+

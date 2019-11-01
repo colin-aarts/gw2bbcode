@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>GW2BBCode Demo</title>
+
+		<link rel="stylesheet" href="/lib/style/GW2BBCode.css">
+
+		<style>
+			html {
+				cursor: default;
+				background: #000;
+				height: 100%;
+				width: 100%;
+				display: table;
+				margin: 0;
+				padding: 0;
+				overflow-x: hidden;
+			}
+
+			body {
+				display: table-cell;
+				vertical-align: middle;
+				text-align: center;
+				margin: 0;
+				padding: 12em;
+			}
+
+			p { margin: 0; }
+
+			.tooltip { text-align: left; }
+
+			#top, #bot {
+				position: fixed;
+				left: 0;
+				right: 0;
+				height: 12em;
+				pointer-events: none;
+			}
+
+			#top {
+				top: 0;
+				background-image: -webkit-linear-gradient(top, #000 10%, transparent);
+				background-image: -moz-linear-gradient(top, #000 10%, transparent);
+				background-image: -ms-linear-gradient(top, #000 10%, transparent);
+				background-image: -o-linear-gradient(top, #000 10%, transparent);
+				background-image: linear-gradient(top, #000 10%, transparent);
+			}
+
+			#bot {
+				bottom: 0;
+				background-image: -webkit-linear-gradient(bottom, #000 10%, transparent);
+				background-image: -moz-linear-gradient(bottom, #000 10%, transparent);
+				background-image: -ms-linear-gradient(bottom, #000 10%, transparent);
+				background-image: -o-linear-gradient(bottom, #000 10%, transparent);
+				background-image: linear-gradient(bottom, #000 10%, transparent);
+			}
+
+			#stats {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				color: #fff;
+				-moz-column-width: 15em;
+			}
+
+			#stats dt, #stats dd {
+				float: left;
+				text-align: left;
+			}
+
+			#stats dt {
+				clear: left;
+				width: 7em;
+			}
+		</style>
+
+		<script src="/lib/script/mootools-1.4.1-min.js"></script>
+		<script src="/lib/script/mootools-more-1.4.0.1-min.js"></script>
+		<script src="/lib/script/mootools-extensions.js"></script>
+		<script src="/lib/script/Tooltip.js"></script>
+		<script src="/lib/script/GW2BBCode.js"></script>
+		<script src="/lib/script/GW2BBCode.skills.js"></script>
+		<script src="/lib/script/GW2BBCode.tools.js"></script>
+		<script>
+			window.addEvent('domready', function(evt) {
+				var str = '';
+				for(skill in GW2BBCode.skillData) {
+					if(GW2BBCode.skillData[skill].alias) return;
+					str += '#{' + skill + '} ';
+				}
+				$('all-skills').set('text', str);
+			});
+		</script>
+		<script src="/lib/script/demo.js"></script>
+	</head>
+
+	<body>
+		<div id="top"></div>
+		<div id="bot"></div>
+		<div id="gw2bbcode-test">
+			<div id="stats"></div>
+			<p id="test"></p>
+			<p id="all-skills"></p>
+		</div>
+	</body>
+</html>

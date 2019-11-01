@@ -1,0 +1,218 @@
+/*******************************************************************************
+** Helpers
+*******************************************************************************/
+
+vendor-prefixes = (-webkit- -moz- -ms- -o- null)
+
+// For vendor-prefixed property names, e.g. '-moz-transform: <args>'
+vendor(prop, args)
+	for vendor in vendor-prefixes
+		add-property '%s%s' % (vendor prop), args
+
+// For vendor-prefixed property values, e.g. 'display: -moz-box'
+vendor-value(prop, args)
+	for vendor in vendor-prefixes
+		add-property '%s' % prop, '%s%s' % (vendor args)
+
+
+
+/*******************************************************************************
+** Mixins
+*******************************************************************************/
+
+
+/*
+** Misc. properties
+*/
+
+
+// To transparently support values such as 'box', we need to overload the
+// 'display' property so we can add vendor prefixes.
+display()
+	if arguments[0] in (box)
+		vendor-value display, box
+	else
+		add-property 'display', arguments
+
+
+border-radius()
+	vendor border-radius, arguments
+
+
+box-shadow()
+	vendor box-shadow, arguments
+
+
+text-shadow()
+	vendor text-shadow, arguments
+
+
+box-sizing()
+	vendor box-sizing, arguments
+
+
+appearance()
+	vendor appearance, arguments
+
+
+transform()
+	vendor transform, arguments
+
+
+transform-origin()
+	vendor transform-origin, arguments
+
+
+transition(prop = all, duration = 1s, easing = ease, delay = 0s)
+	vendor transition, arguments
+
+
+transition-property()
+	vendor transition-property, arguments
+
+
+transition-duration()
+	vendor transition-duration, arguments
+
+
+transition-timing-function()
+	vendor transition-timing-function, arguments
+
+
+transition-delay()
+	vendor transition-delay, arguments
+
+
+font-feature-settings()
+	vendor font-feature-settings, arguments
+
+
+tab-size()
+	vendor tab-size, arguments
+
+
+text-overflow()
+	vendor text-overflow, arguments
+
+
+selection(fg = initial, bg = initial)
+	for vendor in vendor-prefixes
+		::{vendor}selection
+			color: fg
+			background-color: bg
+			text-shadow: none
+
+
+
+/*
+** Backgrounds, borders & gradients
+*/
+
+
+background-size()
+	vendor background-size, arguments
+
+
+background-origin()
+	vendor background-origin, arguments
+
+
+/*
+// To transparently support gradients, we need to overload the
+// 'background-image' property so we can add vendor prefixes.
+// NOTE: This only works when assigning a single background!
+background-image()
+	// The following args are passed in from the helper functions below.
+	// arguments[0]: gradient type, as string
+	// arguments[1]: arguments passed to gradient function, as tuple
+	type = arguments[0]
+
+	if type in ('linear-gradient' 'repeating-linear-gradient' 'radial-gradient' 'repeating-radial-gradient')
+		// Don't ask…
+		type = unquote(type)
+		args = ()
+		for arg in arguments[1]
+			push(args, join(' ', arg))
+		args = unquote(join(',', args))
+
+		for vendor in vendor-prefixes
+			add-property 'background-image', '%s%s(%s)' % (vendor type args)
+	else
+		add-property 'background-image', arguments
+
+
+// Helpers for background-image()
+linear-gradient()
+	'linear-gradient' arguments
+
+repeating-linear-gradient()
+	'repeating-linear-gradient' arguments
+
+radial-gradient()
+	'radial-gradient' arguments
+
+repeating-radial-gradient()
+	'repeating-radial-gradient' arguments
+*/
+
+
+/*
+** Flexbox
+*/
+
+
+box-flex()
+	vendor box-flex, arguments
+
+
+box-align()
+	vendor box-align, arguments
+
+
+box-pack()
+	vendor box-pack, arguments
+
+
+box-orient()
+	vendor box-orient, arguments
+
+
+box-ordinal-group()
+	vendor box-ordinal-group, arguments
+
+
+
+/*
+** Multicol
+*/
+
+
+column-width()
+	vendor column-width, arguments
+
+column-count()
+	vendor column-count, arguments
+
+column-gap()
+	vendor column-gap, arguments
+
+column-rule()
+	vendor column-rule, arguments
+
+
+
+/*
+** Utility
+*/
+
+
+clearfix()
+	// Micro clearfix as per http://nicolasgallagher.com/micro-clearfix-hack/
+	// Passes edge cases: http://www.brunildo.org/test/margin-collapse-clear-7.html
+	&:before, &:after
+		content: ''
+		display: table
+		border-collapse: collapse
+
+	&:after
+		clear: both

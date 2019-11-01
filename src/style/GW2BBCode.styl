@@ -1,0 +1,529 @@
+@import '../../style/common'
+
+/*	****************************************************************************
+**
+**	gw2bbcode.styl
+**
+**	Master style sheet for the gw2bbcode plugin
+**	<http://gw2bbcode.com>
+**
+**	***************************************************************************/
+
+
+image-path = '../img/'
+
+
+
+/*	****************************************************************************
+**	FONTS
+**	***************************************************************************/
+
+
+/*
+**	Diavlo
+**	A font by Jos Buivenga (exljbris) -> www.exljbris.com
+*/
+
+
+// Diavlo Light
+
+@font-face
+	font-family: Diavlo
+	src: url('../fonts/diavlo_light_ii-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/diavlo_light_ii-webfont.woff') format('woff')
+	font-weight: 300
+	font-style: normal
+
+
+// Diavlo Book
+
+@font-face
+	font-family: Diavlo
+	src: url('../fonts/diavlo_book_ii-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/diavlo_book_ii-webfont.woff') format('woff')
+	font-weight: 400
+	font-style: normal
+
+
+// Diavlo Medium
+
+@font-face
+	font-family: Diavlo
+	src: url('../fonts/diavlo_medium_ii-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/diavlo_medium_ii-webfont.woff') format('woff')
+	font-weight: 500
+	font-style: normal
+
+
+// Diavlo Bold
+
+@font-face
+	font-family: Diavlo
+	src: url('../fonts/diavlo_bold_ii-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/diavlo_bold_ii-webfont.woff') format('woff')
+	font-weight: 600
+	font-style: normal
+
+
+// Diavlo Black
+
+@font-face
+	font-family: Diavlo
+	src: url('../fonts/diavlo_black_ii-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/diavlo_black_ii-webfont.woff') format('woff')
+	font-weight: 800
+	font-style: normal
+
+
+
+/*
+**	Delicious
+**	A font by Jos Buivenga (exljbris) -> www.exljbris.com
+*/
+
+
+// Delicious Regular
+
+@font-face
+	font-family: Delicious
+	src: url('../fonts/delicious-roman-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/delicious-roman-webfont.woff') format('woff')
+	font-weight: 400
+	font-style: normal
+
+
+// Delicious Bold
+
+@font-face
+	font-family: Delicious
+	src: url('../fonts/delicious-bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/delicious-bold-webfont.woff') format('woff')
+	font-weight: 700
+	font-style: normal
+
+
+// Delicious Heavy
+
+@font-face
+	font-family: Delicious
+	src: url('../fonts/delicious-heavy-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/delicious-heavy-webfont.woff') format('woff')
+	font-weight: 800
+	font-style: normal
+
+
+// Delicious Italic
+
+@font-face
+	font-family: Delicious
+	src: url('../fonts/delicious-italic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/delicious-italic-webfont.woff') format('woff')
+	font-weight: 400
+	font-style: italic
+
+
+// Delicious Bold Italic
+
+@font-face
+	font-family: Delicious
+	src: url('../fonts/delicious-bolditalic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/delicious-bolditalic-webfont.woff') format('woff')
+	font-weight: 700
+	font-style: italic
+
+
+// Delicious Small Caps
+
+@font-face
+	font-family: DeliciousSC
+	src: url('../fonts/delicious-smallcaps-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/delicious-smallcaps-webfont.woff') format('woff')
+	font-weight: 400
+	font-style: normal
+	font-variant: small-caps
+
+
+
+/*
+**	Font stacks
+*/
+
+
+font-body    = Delicious, Arial, Helvetica, sans-serif
+font-heading = Diavlo, 'Trebuchet MS', Arial, Helvetica, sans-serif
+font-mono    = Monaco, Consolas, monospaced
+
+
+
+/*	****************************************************************************
+**	GW2BBCode Skill Element
+**	***************************************************************************/
+
+
+[data-skill]
+	display: inline-block
+	width: 3.5em
+	width: 3.5rem
+	height: 3.5em
+	height: 3.5rem
+	word-wrap: break-word
+	overflow: hidden
+	background: url(image-path + icons/No_icon.jpg) no-repeat
+	background-size: cover
+	color: white
+	border-radius: .2em
+	box-sizing: border-box
+
+	&:hover, &:active, &:focus
+		transform: scale(1.3)
+		border: 2px solid #fff
+		box-shadow: 0 0 1em hsla(0, 0%, 0%, .5)
+
+	&[data-elite="true"]
+		border: 2px solid gold
+		box-shadow: 0 0 5px hsla(0, 0%, 0%, .5)
+
+	> img
+		vertical-align: bottom
+		width: 100%
+		height: 100%
+
+
+
+/*	****************************************************************************
+**	GW2BBCode Tooltip
+**	***************************************************************************/
+
+.tooltip.gw2bbcode
+	position: absolute
+	top: 0
+	left: 0
+	width: 28em
+	width: 28rem
+	padding: 1em
+	padding: 1rem
+	box-shadow: 0 0 1em hsla(0, 0%, 0%, .5)
+	border: 1px solid hsla(0, 0%, 100%, .9)
+	background-color: hsla(0, 0%, 100%, .98)
+	background-image: url(image-path + logo-gw2-dragon-tooltip.png)
+	background-repeat: no-repeat
+	background-size: 4em
+	background-position: bottom right
+	font-size: 1em
+	font-size: 1rem
+	font-family: font-body
+	line-height: 1.45
+	color: hsl(0, 0%, 20%)
+	opacity: 0
+	pointer-events: none
+	transition: opacity .2s ease .5s
+
+	&[aria-hidden="false"]
+		opacity: 1
+		transition-duration: .1s
+		z-index: 20
+
+	p
+		margin: 0
+
+
+	/*
+	**	Skill thumb
+	*/
+
+	.skill-thumb
+		float: left
+		margin: 0 .5em 0 0
+		width: 4.3em
+		height: 4.3em
+		padding: 1px
+		border: 1px solid hsl(0, 0%, 70%)
+		border-radius: .4em
+		box-sizing: border-box
+
+		&[data-elite="true"]
+			border: 3px solid gold
+			box-shadow: 0 0 .5em hsla(0, 0%, 0%, .5)
+
+
+	/*
+	**	Header
+	*/
+
+	.header
+		margin: 0 0 1em 0
+		padding: 0 0 0 .5em
+		min-height: 4.3em
+		overflow: hidden
+
+
+		// Title
+
+		.title
+			margin: 0 0 .2em 0
+			font-family: font-heading
+			font-size: 1.3em
+			line-height: 1
+			letter-spacing: .1em
+			text-transform: uppercase
+
+
+		// Description
+
+		.description
+			font-style: italic
+			color: hsl(0, 0%, 40%)
+
+			&:before,
+			&:after
+				color: hsl(0, 0%, 60%)
+
+			&:before
+				content: '“'
+				margin-left: -.4em
+
+			&:after
+				content: '”'
+
+			.signature-label
+				color: hsl(0, 0%, 0%)
+
+
+	/*
+	**	Properties list
+	*/
+
+	ul.properties
+		clear: both
+		margin: 0
+		padding: 0
+		list-style: none
+
+		> li
+			margin: 0
+			width: 49%
+			box-sizing: border-box
+
+			&:nth-child(-n+2)
+				margin-bottom: .5em
+
+
+			// Tags list
+
+			&[data-tags]
+				width: 100%
+				margin-top: .5em
+
+				> ul
+					margin: 0
+					padding: 0
+
+					> li
+						display: inline-block
+						padding: 0 .3em
+						border: 1px solid hsl(0, 0%, 80%)
+						border-radius: .2em
+						font-size: .9em
+						font-family: font-heading
+						text-transform: uppercase
+						color: hsl(0, 0%, 30%)
+						margin: 0 .3em 0 0
+
+
+	/*
+	**	Effects, keywords and stuff
+	*/
+
+	.boon,
+	.condition,
+	.positioning,
+	.misc-effect,
+	[data-profession],
+	[data-recharge],
+	[data-slot],
+	[data-type]
+		padding-left: 22px
+		background-repeat: no-repeat
+		background-position: left center
+		min-height: 20px
+		display: inline-block
+
+
+	// Professions
+
+	[data-profession="All"]
+		background-image: url(image-path + icons/small/Any.png)
+
+	[data-profession="Warrior"]
+		background-image: url(image-path + icons/small/Warrior.png)
+
+	[data-profession="Guardian"]
+		background-image: url(image-path + icons/small/Guardian.png)
+
+	[data-profession="Thief"]
+		background-image: url(image-path + icons/small/Thief.png)
+
+	[data-profession="Ranger"]
+		background-image: url(image-path + icons/small/Ranger.png)
+
+	[data-profession="Elementalist"]
+		background-image: url(image-path + icons/small/Elementalist.png)
+
+	[data-profession="Engineer"]
+		background-image: url(image-path + icons/small/Engineer.png)
+
+	[data-profession="Necromancer"]
+		background-image: url(image-path + icons/small/Necromancer.png)
+
+	[data-profession="Mesmer"]
+		background-image: url(image-path + icons/small/Mesmer.png)
+
+
+	// Recharge
+
+	[data-recharge]
+		background-image: url(image-path + icons/small/Recharge.png)
+
+
+	// Slot
+
+	[data-slot]
+		background-image: url(image-path + icons/small/Any.png)
+
+	[data-slot="Elite"] span
+		padding: 0 .3em
+		border-radius: .2em
+		color: gold
+		background: hsla(0, 0%, 0%, .5)
+		background-image: -webkit-linear-gradient(top, hsla(0, 0%, 0%, .6), hsla(0, 0%, 0%, .8))
+		background-image: -moz-linear-gradient(top, hsla(0, 0%, 0%, .6), hsla(0, 0%, 0%, .8))
+		background-image: -ms-linear-gradient(top, hsla(0, 0%, 0%, .6), hsla(0, 0%, 0%, .8))
+		background-image: -o-linear-gradient(top, hsla(0, 0%, 0%, .6), hsla(0, 0%, 0%, .8))
+		background-image: linear-gradient(top, hsla(0, 0%, 0%, .6), hsla(0, 0%, 0%, .8))
+
+
+	// Type
+
+	[data-type]
+		background-image: url(image-path + icons/small/Some.png)
+
+	[data-type="General"]
+		color: hsla(0, 0%, 0%, .5)
+
+		&:before
+			content: '('
+
+		&:after
+			content: ')'
+
+
+	// Boons
+
+	.swiftness
+		background-image: url(image-path + icons/small/Swiftness.png)
+
+	.regeneration
+		background-image: url(image-path + icons/small/Regeneration.png)
+
+	.protection
+		background-image: url(image-path + icons/small/Protection.png)
+
+	.fury
+		background-image: url(image-path + icons/small/Fury.png)
+
+	.might
+		background-image: url(image-path + icons/small/Might.png)
+
+	.vigor
+		background-image: url(image-path + icons/small/Vigor.png)
+
+	.aegis
+		background-image: url(image-path + icons/small/Aegis.png)
+
+
+	// Conditions
+
+	.burning
+		background-image: url(image-path + icons/small/Burning.png)
+
+	.bleeding
+		background-image: url(image-path + icons/small/Bleeding.png)
+
+	.blind
+		background-image: url(image-path + icons/small/Blind.png)
+
+	.immobilized
+		background-image: url(image-path + icons/small/Immobilized.png)
+
+	.vulnerability
+		background-image: url(image-path + icons/small/Vulnerability.png)
+
+	.crippled
+		background-image: url(image-path + icons/small/Crippled.png)
+
+	.weakness
+		background-image: url(image-path + icons/small/Weakness.png)
+
+	.chilled
+		background-image: url(image-path + icons/small/Chilled.png)
+
+	.fear
+		background-image: url(image-path + icons/small/Fear.png)
+
+
+	// Positioning
+
+	.pull
+		background-image: url(image-path + icons/small/No_icon.jpg)
+
+	.leap
+		background-image: url(image-path + icons/small/No_icon.jpg)
+
+	.teleport
+		background-image: url(image-path + icons/small/No_icon.jpg)
+
+	.sink
+		background-image: url(image-path + icons/small/No_icon.jpg)
+
+	.float
+		background-image: url(image-path + icons/small/No_icon.jpg)
+
+	.retreat
+		background-image: url(image-path + icons/small/No_icon.jpg)
+
+
+	// Misc effects
+
+	.launch
+		background-image: url(image-path + icons/small/Launch.png)
+
+	.stun
+		background-image: url(image-path + icons/small/Stun.png)
+
+	.knockdown
+		background-image: url(image-path + icons/small/Knockdown.png)
+
+	.knockback
+		background-image: url(image-path + icons/small/Knockback.png)
+
+	.daze
+		background-image: url(image-path + icons/small/Daze.png)
+
+	.invulnerability
+		background-image: url(image-path + icons/small/Invulnerability.png)
+
+
+	// Keywords
+
+	.boon
+		color: hsl(240, 50%, 60%)
+
+	.condition
+		color: hsl(360, 50%, 60%)
+
+	.positioning
+		color: hsl(120, 50%, 40%)
+
+	.technique
+		color: hsl(60, 50%, 40%)
+
+	.skill-type
+		color: hsl(300, 50%, 60%)
+
+	.misc-effect
+		color: hsl(180, 50%, 40%)
+
+	.skill
+		text-transform: uppercase
+		font-style: normal
+		font-size: .9em
+		font-family: font-heading

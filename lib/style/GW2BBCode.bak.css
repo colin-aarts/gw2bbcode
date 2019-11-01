@@ -1,0 +1,528 @@
+/* =============================================================================
+** Skill icons
+*/
+
+
+[data-skill] {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	word-wrap: break-word;
+	overflow: hidden;
+	background: url(img/icons/No_icon.jpg) no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-ms-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	color: white;
+	-webkit-border-radius: .2em;
+	-moz-border-radius: .2em;
+	-ms-border-radius: .2em;
+	-o-border-radius: .2em;
+	border-radius: .2em;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+[data-skill]:hover,
+[data-skill]:active,
+[data-skill]:focus {
+	-webkit-transform: scale(1.3);
+	-moz-transform: scale(1.3);
+	-ms-transform: scale(1.3);
+	-o-transform: scale(1.3);
+	transform: scale(1.3);
+	border: 2px solid #fff;
+	-webkit-box-shadow: 0 0 1em hsla(0, 0%, 0%, .5);
+	-moz-box-shadow: 0 0 1em hsla(0, 0%, 0%, .5);
+	-ms-box-shadow: 0 0 1em hsla(0, 0%, 0%, .5);
+	-o-box-shadow: 0 0 1em hsla(0, 0%, 0%, .5);
+	box-shadow: 0 0 1em hsla(0, 0%, 0%, .5);
+}
+
+[data-skill] img {
+	vertical-align: bottom;
+	width: 100%;
+	height: 100%;
+}
+
+
+/* Elites */
+
+[data-skill][data-elite="true"] {
+	border: 2px solid gold;
+	-webkit-box-shadow: 0 0 5px hsla(0, 0%, 0%, .5);
+	-moz-box-shadow: 0 0 5px hsla(0, 0%, 0%, .5);
+	-ms-box-shadow: 0 0 5px hsla(0, 0%, 0%, .5);
+	-o-box-shadow: 0 0 5px hsla(0, 0%, 0%, .5);
+	box-shadow: 0 0 5px hsla(0, 0%, 0%, .5);
+}
+
+
+
+/* =============================================================================
+** Tooltips
+*/
+
+
+/* Tooltip container */
+
+.tooltip.gw2bbcode {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 28em;
+	padding: 1em;
+	-webkit-box-shadow: 0 0 1em hsla(0, 0%, 0%, .5);
+	-moz-box-shadow: 0 0 1em hsla(0, 0%, 0%, .5);
+	-ms-box-shadow: 0 0 1em hsla(0, 0%, 0%, .5);
+	-o-box-shadow: 0 0 1em hsla(0, 0%, 0%, .5);
+	box-shadow: 0 0 1em hsla(0, 0%, 0%, .5);
+	border: 1px solid hsla(0, 0%, 100%, .9);
+	background-color: hsla(0, 0%, 100%, .98);
+	background-image: url(img/logo-gw2-dragon-tooltip.png);
+	background-repeat: no-repeat;
+	-webkit-background-size: 4em;
+	-moz-background-size: 4em;
+	-ms-background-size: 4em;
+	-o-background-size: 4em;
+	background-size: 4em;
+	background-position: bottom right;
+	font-size: 1em;
+	font-size: 1rem;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	line-height: 1.45;
+	color: hsl(0, 0%, 20%);
+	opacity: 0;
+	pointer-events: none;
+	-webkit-transition: opacity .2s ease .5s;
+	-moz-transition: opacity .2s ease .5s;
+	-ms-transition: opacity .2s ease .5s;
+	-o-transition: opacity .2s ease .5s;
+	transition: opacity .2s ease .5s;
+}
+
+
+/* Tooltip visible state */
+
+.tooltip.gw2bbcode[aria-hidden="false"] {
+	opacity: 1;
+	-webkit-transition-duration: .1s;
+	-moz-transition-duration: .1s;
+	-ms-transition-duration: .1s;
+	-o-transition-duration: .1s;
+	transition-duration: .1s;
+}
+
+
+/* Tooltip misc */
+
+.tooltip.gw2bbcode p {
+	margin: 0;
+}
+
+
+/* Tooltip skill thumb */
+
+.tooltip.gw2bbcode .skill-thumb {
+	float: left;
+	margin: 0 .5em 0 0;
+	width: 4.3em;
+	height: 4.3em;
+	padding: 1px;
+	border: 1px solid hsl(0, 0%, 70%);
+	-webkit-border-radius: .4em;
+	-moz-border-radius: .4em;
+	-ms-border-radius: .4em;
+	-o-border-radius: .4em;
+	border-radius: .4em;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.tooltip.gw2bbcode .skill-thumb[data-elite="true"] {
+	border: 3px solid gold;
+	-webkit-box-shadow: 0 0 .5em hsla(0, 0%, 0%, .5);
+	-moz-box-shadow: 0 0 .5em hsla(0, 0%, 0%, .5);
+	-ms-box-shadow: 0 0 .5em hsla(0, 0%, 0%, .5);
+	-o-box-shadow: 0 0 .5em hsla(0, 0%, 0%, .5);
+	box-shadow: 0 0 .5em hsla(0, 0%, 0%, .5);
+}
+
+
+/* Tooltip header */
+
+.tooltip.gw2bbcode .header {
+	margin: 0 0 1em 0;
+	padding: 0 0 0 .5em;
+	min-height: 4.3em;
+	overflow: hidden; /* BFC */
+}
+
+
+/* Skill title */
+
+.tooltip.gw2bbcode .title {
+	margin: 0 0 .2em 0;
+	/*font-style: italic;*/
+	/*font-weight: bold;*/
+	font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+	font-size: 1.3em;
+	line-height: 1;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+}
+
+
+/* Skill description */
+
+.tooltip.gw2bbcode .description {
+	font-style: italic;
+	color: hsl(0, 0%, 40%)
+}
+
+.tooltip.gw2bbcode .description:before,
+.tooltip.gw2bbcode .description:after {
+	color: hsl(0, 0%, 60%);
+}
+
+.tooltip.gw2bbcode .description:before {
+	content: '“';
+	margin-left: -.4em;
+}
+
+.tooltip.gw2bbcode .description:after {
+	content: '”';
+}
+
+.tooltip.gw2bbcode .description .signature-label {
+	color: hsl(0, 0%, 0%);
+}
+
+
+/* Skill properties */
+
+.tooltip.gw2bbcode ul.properties {
+	clear: both;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.tooltip.gw2bbcode ul.properties > li {
+	width: 49.5%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.tooltip.gw2bbcode ul.properties > li[data-tags] {
+	width: 100%;
+	margin-top: .5em;
+}
+
+.tooltip.gw2bbcode ul.properties > li[data-tags] > ul {
+	margin: 0;
+	padding: 0;
+}
+
+.tooltip.gw2bbcode ul.properties > li[data-tags] > ul > li {
+	display: inline-block;
+	padding: 0 .3em;
+	border: 1px solid hsl(0, 0%, 80%);
+	-webkit-border-radius: .2em;
+	-moz-border-radius: .2em;
+	-ms-border-radius: .2em;
+	-o-border-radius: .2em;
+	border-radius: .2em;
+	font-size: .9em;
+	font-family: 'Trebuchet MS', sans-serif;
+	text-transform: uppercase;
+	color: hsl(0, 0%, 30%);
+	margin: 0 .3em 0 0;
+}
+
+.tooltip.gw2bbcode ul.properties > li:nth-child(-n+2) {
+	margin-bottom: .5em;
+}
+
+
+
+/*
+** Skill and skill property icons
+*/
+
+
+.tooltip.gw2bbcode .boon,
+.tooltip.gw2bbcode .condition,
+.tooltip.gw2bbcode .positioning,
+.tooltip.gw2bbcode .misc-effect,
+.tooltip.gw2bbcode [data-profession],
+.tooltip.gw2bbcode [data-recharge],
+.tooltip.gw2bbcode [data-slot],
+.tooltip.gw2bbcode [data-type] {
+	padding-left: 25px;
+	background-repeat: no-repeat;
+	background-position: left center;
+	min-height: 20px;
+	display: inline-block;
+}
+
+
+/* Professions */
+
+.tooltip.gw2bbcode [data-profession="All"] {
+	background-image: url(img/icons/20/Any.png);
+}
+
+.tooltip.gw2bbcode [data-profession="Warrior"] {
+	background-image: url(img/icons/20/Warrior.png);
+}
+
+.tooltip.gw2bbcode [data-profession="Guardian"] {
+	background-image: url(img/icons/20/Guardian.png);
+}
+
+.tooltip.gw2bbcode [data-profession="Thief"] {
+	background-image: url(img/icons/20/Thief.png);
+}
+
+.tooltip.gw2bbcode [data-profession="Ranger"] {
+	background-image: url(img/icons/20/Ranger.png);
+}
+
+.tooltip.gw2bbcode [data-profession="Elementalist"] {
+	background-image: url(img/icons/20/Elementalist.png);
+}
+
+.tooltip.gw2bbcode [data-profession="Engineer"] {
+	background-image: url(img/icons/20/Engineer.png);
+}
+
+.tooltip.gw2bbcode [data-profession="Necromancer"] {
+	background-image: url(img/icons/20/Necromancer.png);
+}
+
+.tooltip.gw2bbcode [data-profession="Mesmer"] {
+	background-image: url(img/icons/20/Mesmer.png);
+}
+
+
+/* Skill properties */
+
+.tooltip.gw2bbcode [data-recharge] {
+	background-image: url(img/icons/20/Recharge.png);
+}
+
+.tooltip.gw2bbcode [data-slot] {
+	background-image: url(img/icons/20/Any.png);
+}
+
+.tooltip.gw2bbcode [data-slot="Elite"] span {
+	padding: 0 .3em;
+	-webkit-border-radius: .2em;
+	-moz-border-radius: .2em;
+	-ms-border-radius: .2em;
+	-o-border-radius: .2em;
+	border-radius: .2em;
+	color: gold;
+	background: hsla(0, 0%, 0%, .5);
+	background: -webkit-linear-gradient(top, hsla(0, 0%, 0%, .6), hsla(0, 0%, 0%, .8));
+	background: -moz-linear-gradient(top, hsla(0, 0%, 0%, .6), hsla(0, 0%, 0%, .8));
+	background: -ms-linear-gradient(top, hsla(0, 0%, 0%, .6), hsla(0, 0%, 0%, .8));
+	background: -o-linear-gradient(top, hsla(0, 0%, 0%, .6), hsla(0, 0%, 0%, .8));
+	background: linear-gradient(top, hsla(0, 0%, 0%, .6), hsla(0, 0%, 0%, .8));
+}
+
+.tooltip.gw2bbcode [data-type] {
+	background-image: url(img/icons/20/Some.png);
+}
+
+.tooltip.gw2bbcode [data-type="General"] {
+	color: hsla(0, 0%, 0%, .5);
+}
+
+.tooltip.gw2bbcode [data-type="General"]:before {
+	content: '(';
+}
+
+.tooltip.gw2bbcode [data-type="General"]:after {
+	content: ')';
+}
+
+.tooltip.gw2bbcode [data-tags] {
+
+}
+
+
+/* Boons */
+
+.tooltip.gw2bbcode .swiftness {
+	background-image: url(img/icons/20/Swiftness.png);
+}
+
+.tooltip.gw2bbcode .regeneration {
+	background-image: url(img/icons/20/Regeneration.png);
+}
+
+.tooltip.gw2bbcode .protection {
+	background-image: url(img/icons/20/Protection.png);
+}
+
+.tooltip.gw2bbcode .fury {
+	background-image: url(img/icons/20/Fury.png);
+}
+
+.tooltip.gw2bbcode .might {
+	background-image: url(img/icons/20/Might.png);
+}
+
+.tooltip.gw2bbcode .vigor {
+	background-image: url(img/icons/20/Vigor.png);
+}
+
+.tooltip.gw2bbcode .aegis {
+	background-image: url(img/icons/20/Aegis.png);
+}
+
+
+/* Conditions */
+
+.tooltip.gw2bbcode .burning {
+	background-image: url(img/icons/20/Burning.png);
+}
+
+.tooltip.gw2bbcode .bleeding {
+	background-image: url(img/icons/20/Bleeding.png);
+}
+
+.tooltip.gw2bbcode .blind {
+	background-image: url(img/icons/20/Blind.png);
+}
+
+.tooltip.gw2bbcode .immobilized {
+	background-image: url(img/icons/20/Immobilized.png);
+}
+
+.tooltip.gw2bbcode .vulnerability {
+	background-image: url(img/icons/20/Vulnerability.png);
+}
+
+.tooltip.gw2bbcode .crippled {
+	background-image: url(img/icons/20/Crippled.png);
+}
+
+.tooltip.gw2bbcode .weakness {
+	background-image: url(img/icons/20/Weakness.png);
+}
+
+.tooltip.gw2bbcode .chilled {
+	background-image: url(img/icons/20/Chilled.png);
+}
+
+.tooltip.gw2bbcode .fear {
+	background-image: url(img/icons/20/Fear.png);
+}
+
+
+/* Positioning */
+
+.tooltip.gw2bbcode .pull {
+	background-image: url(img/icons/20/No_icon.jpg);
+}
+
+.tooltip.gw2bbcode .leap {
+	background-image: url(img/icons/20/No_icon.jpg);
+}
+
+.tooltip.gw2bbcode .teleport {
+	background-image: url(img/icons/20/No_icon.jpg);
+}
+
+.tooltip.gw2bbcode .sink {
+	background-image: url(img/icons/20/No_icon.jpg);
+}
+
+.tooltip.gw2bbcode .float {
+	background-image: url(img/icons/20/No_icon.jpg);
+}
+
+.tooltip.gw2bbcode .retreat {
+	background-image: url(img/icons/20/No_icon.jpg);
+}
+
+
+/* Other */
+
+.tooltip.gw2bbcode .launch {
+	background-image: url(img/icons/20/Launch.png);
+}
+
+.tooltip.gw2bbcode .stun {
+	background-image: url(img/icons/20/Stun.png);
+}
+
+.tooltip.gw2bbcode .knockdown {
+	background-image: url(img/icons/20/Knockdown.png);
+}
+
+.tooltip.gw2bbcode .knockback {
+	background-image: url(img/icons/20/Knockback.png);
+}
+
+.tooltip.gw2bbcode .daze {
+	background-image: url(img/icons/20/Daze.png);
+}
+
+.tooltip.gw2bbcode .invulnerability {
+	background-image: url(img/icons/20/Invulnerability.png);
+}
+
+
+
+/*
+** Skill keywords (skill types, mechanics, …)
+*/
+
+
+.tooltip.gw2bbcode .boon {
+	color: hsl(240, 50%, 60%); /* blue */
+}
+
+.tooltip.gw2bbcode .condition {
+	color: hsl(360, 50%, 60%); /* red */
+}
+
+.tooltip.gw2bbcode .positioning {
+	color: hsl(120, 50%, 40%); /* green */
+}
+
+.tooltip.gw2bbcode .technique {
+	color: hsl(60, 50%, 40%); /* olive */
+}
+
+.tooltip.gw2bbcode .skill-type {
+	color: hsl(300, 50%, 60%); /* magenta */
+}
+
+.tooltip.gw2bbcode .misc-effect {
+	color: hsl(180, 50%, 40%); /* teal */
+}
+
+
+.tooltip.gw2bbcode .skill {
+	/*font-weight: bold;*/
+	text-transform: uppercase;
+	font-style: normal;
+	font-size: .9em;
+	font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+}
