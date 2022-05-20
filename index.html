@@ -1,30 +1,31 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>GW2BBCode — Guild Wars 2 BBCode for your site</title>
 
-		<link href="/style/normalize.css" rel="stylesheet">
-		<link href="/lib/style/GW2BBCode.css" rel="stylesheet">
-		<link href="/style/site.css" rel="stylesheet">
+<head>
+	<meta charset="utf-8">
+	<title>GW2BBCode — Guild Wars 2 BBCode for your site</title>
 
-		<!-- GW2BBCode scripts -->
-		<script src="/lib/script/mootools-1.4.1-min.js"></script>
-		<script src="/lib/script/mootools-more-1.4.0.1-min.js"></script>
-		<script src="/lib/script/mootools-extensions.js"></script>
-		<script src="/lib/script/Tooltip.js"></script>
-		<script src="/lib/script/GW2BBCode.js"></script>
-		<script src="/lib/script/GW2BBCode.skills.js"></script>
-		<script src="/lib/script/GW2BBCode.tools.js"></script>
+	<link href="/style/normalize.css" rel="stylesheet">
+	<link href="/lib/style/GW2BBCode.css" rel="stylesheet">
+	<link href="/style/site.css" rel="stylesheet">
 
-		<!-- gw2bbcode.com scripts -->
-		<script src="/script/TabControl.js"></script>
-		<script src="/script/Overlay.js"></script>
-		<script src="/script/Dialog.js"></script>
-		<script src="/script/main.js"></script>
+	<!-- GW2BBCode scripts -->
+	<script src="/lib/script/mootools-1.4.1-min.js"></script>
+	<script src="/lib/script/mootools-more-1.4.0.1-min.js"></script>
+	<script src="/lib/script/mootools-extensions.js"></script>
+	<script src="/lib/script/Tooltip.js"></script>
+	<script src="/lib/script/GW2BBCode.js"></script>
+	<script src="/lib/script/GW2BBCode.skills.js"></script>
+	<script src="/lib/script/GW2BBCode.tools.js"></script>
 
-		<!-- Google Analytics -->
-		<script>
+	<!-- gw2bbcode.com scripts -->
+	<script src="/script/TabControl.js"></script>
+	<script src="/script/Overlay.js"></script>
+	<script src="/script/Dialog.js"></script>
+	<script src="/script/main.js"></script>
+
+	<!-- Google Analytics -->
+	<!-- <script>
 		  var _gaq = _gaq || [];
 		  _gaq.push(['_setAccount', 'UA-28576379-1']);
 		  _gaq.push(['_trackPageview']);
@@ -34,150 +35,206 @@
 		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		  }();
-		</script>
+		</script> -->
 
-		<!-- Favicon -->
-		<link href="/favicon.ico" rel="icon" type="image/vnd.microsoft.icon">
+	<!-- Favicon -->
+	<link href="/favicon.ico" rel="icon" type="image/vnd.microsoft.icon">
 
-		<!-- Feeds -->
-		<link href="/updates.atom" type="application/atom+xml" rel="alternate" title="GW2BBCode Updates" />
-	</head>
+	<!-- Feeds -->
+	<link href="/updates.atom" type="application/atom+xml" rel="alternate" title="GW2BBCode Updates" />
+</head>
 
-	<body>
-		<header id="main-header">
-			<div id="download">
-				<p id="intro"><span class="gw2bbcode-name"><span class="gw2bbcode-name-gw2">GW2</span>BBCode</span> is a MooTools plug-in for displaying Guild Wars 2 skill icons with info tooltips on your website</p>
-				<p id="download-lib"><a href="/dist/latest.tar.gz"><span>Get GW2BBCode</span> <span>version 0.1 — 1.9 MB</span></a></p>
-				<p id="download-src">Or <a href="/dist/latest-source.tar.gz">download the source code</a> (CoffeeScript and Stylus)</p>
-				<p><small>GW2BBCode is released under the <a href="/LICENSE">MIT license</a></small></p>
-				<!-- AddThis Button BEGIN -->
-				<!-- <div class="addthis_toolbox addthis_default_style ">
+<body>
+	<aside style="background: #610b04; display: flex; justify-content: center; text-shadow: none; color: white">
+		<p>This is an archived (and incomplete) project, do not use 😎</p>
+	</aside>
+	<header id="main-header">
+		<div id="download">
+			<p id="intro"><span class="gw2bbcode-name"><span class="gw2bbcode-name-gw2">GW2</span>BBCode</span> is a
+				MooTools plug-in for displaying Guild Wars 2 skill icons with info tooltips on your website</p>
+			<p id="download-lib"><a href="/dist/latest.tar.gz"><span>Get GW2BBCode</span> <span>version 0.1 — 1.9
+						MB</span></a></p>
+			<p id="download-src">Or <a href="/dist/latest-source.tar.gz">download the source code</a> (CoffeeScript and
+				Stylus)</p>
+			<p><small>GW2BBCode is released under the <a href="/LICENSE">MIT license</a></small></p>
+			<!-- AddThis Button BEGIN -->
+			<!-- <div class="addthis_toolbox addthis_default_style ">
 					<a class="addthis_counter addthis_pill_style"></a>
 				</div>
 				<script src="//s7.addthis.com/js/250/addthis_widget.js#pubid=riven"></script> -->
-				<!-- AddThis Button END -->
-			</div> <!-- end #download -->
+			<!-- AddThis Button END -->
+		</div> <!-- end #download -->
 
-			<div id="branding">
-				<div>
-					<img src="img/logo-gw2-dragon-bbcode.png" alt="GW2BBCode">
-					<p id="version-label">preview</p>
-				</div>
-			</div> <!-- end #branding -->
-		</header> <!-- end header -->
-
-		<div id="spotlight">
-			<section id="news">
-				<header>
-					<h1>News &amp; updates</h1>
-					<ul class="toolbar">
-						<li class="twitter"><a href="https://twitter.com/GW2BBCode" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-width="100px" data-align="right">Follow @GW2BBCode</a>
-							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></li>
-						<li class="atom"><a title="Atom feed for news and updates" href="/updates.atom">Atom feed</a></li>
-					</ul>
-				</header>
-				<div>
-					<article>
-						<h1>gw2bbcode.com launched!</h1>
-						<p class="pubinfo"><time datetime="2012-01-25">January 25, 2012</time></p>
-						<p>Today marks the birth of gw2bbcode.com, the home of the GW2BBCode project.</p>
-						<p>For now, you can find a preview version of GW2BBCode here, and basic installation and configuration instructions. In the near future, proper documentation will be added.</p>
-						<p>Other things that are planned are a Twitter account for the project, publication of the project to github and a way for users to comment on, and discuss GW2BBCode. A link to a Guild Wars 2 Guru Forums discussion thread will be added here later as an update to this post.</p>
-						<p>Update: the ‘official’ <a href="http://www.guildwars2guru.com/forum/gw2bbcode-t26253.html?t=26253" rel="external">discussion and support thread</a> can be found on the Guild Wars 2 Guru Forums.</p>
-						<p>Enjoy!</p>
-					</article>
-				</div>
-			</section> <!-- end #news -->
-
-			<section id="demo">
-				<header>
-					<h1>Demo</h1>
-				</header>
-				<div>
-					<p id="demo-skills">Please enable JavaScript in your browser to be able to see GW2BBCode in action.</p>
-				</div>
-			</section> <!-- end #demo -->
-		</div> <!-- end #spotlight -->
-
-		<section id="overview">
-			<div class="panels">
-				<section id="about">
-					<h1>About</h1>
-
-					<p>Despite the name, GW2BBCode is not real <a href="http://en.wikipedia.org/wiki/BBCode" rel="external">BBCode</a>: it does not integrate with any bulletin board systems (forums). Instead, GW2BBCode is a stand-alone (it can work with <em>any</em> site), <a href="http://en.wikipedia.org/wiki/JavaScript" rel="external">JavaScript</a>-based plug-in: all you need to do in order to enable GW2BBCode for your site is include some additional files and do some very simple configuration. More on that in the <a href="#installation">installation section</a>.</p>
-
-					<p>There is one caveat: GW2BBCode is a <a href="http://mootools.net" rel="external">MooTools</a> plug-in. If your site is already using a different JavaScript library, this <em>may</em> cause trouble – and even if it doesn't, including two “general purpose” libraries is generally not a great idea, for various reasons. However, that's just the way it is – the author of GW2BBCode loves MooTools, so when he does hobby projects he uses MooTools. Perhaps he will port GW2BBCode to vanilla JavaScript one day, if and when he feels like it.</p>
-				</section> <!-- end #about -->
-
-				<section id="usage">
-					<h1>Usage</h1>
-
-					<p><code>#{skill name}</code></p>
-
-					<p>GW2BBCode will find text that looks like this and replace it with the appropriate skill icon. That is all.</p>
-
-					<p>Skill names are case-insensitive, and skill names can have aliases (time will tell which aliases are desirable; there are none in the system right now). If a skill name doesn't exist in the datastore, GW2BBCode will simply leave the code untouched.</p>
-
-					<p>Builds and other features aren't supported right now, for obvious reasons. Support for whatever features make sense will be added after Guild Wars 2's launch.</p>
-
-					<p>Technical note: the template for GW2BBCode, as a regular expression, is <code>/#\{(.*?)\}/g</code>. You can customise this through the <a href="#docs">constructor's options object</a> if you want or need to.</p>
-				</section> <!-- end #usage -->
-
-				<section id="installation">
-					<h1>Installation</h1>
-
-					<ol>
-						<li>Include the files found in the download in your page(s). The file <code>GW2BBCode.tools.js</code> is optional; it provides some additional utilities for developers. More on that in the <a href="#docs">documentation</a>. Note that when it comes to MooTools and MooTools More, you can use any version you want equal to or greater than 1.4.0. The files in the download are just for convenience. MooTools should be included first, followed by <code>mootools-extensions.js</code>, <code>Tooltip.js</code>, <code>GW2BBCode.js</code>, <code>GW2BBCode.skills.js</code> and finally <code>GW2BBCode.tools.js</code> if you need it.</li>
-						<li>Initialize GW2BBCode; simplest case: <code>new GW2BBCode(document.body)</code>. The constructor takes two arguments: <i>containers</i>, an element (or elements collection or string selector) and <i>options</i>, an options object. <i>Containers</i> is where GW2BBCode looks for the BBCode, and should resolve to a collection of elements as specific as possible in order to prevent issues with other scripts you may have running (and also for general performance). See the <a href="#docs">documentation</a> for details.</li>
-					</ol>
-				</section> <!-- end #installation -->
-
-				<section id="docs-ref">
-					<h1>Docs</h1>
-					<!-- <p>Please enable JavaScript in your browser to be able to see the GW2BBCode documentation.</p> -->
-					<p>The GW2BBCode documentation is coming soon!</p>
-				</section> <!-- end #docs-ref -->
-
-				<section id="stats">
-					<h1>Stats</h1>
-					<p>Please enable JavaScript in your browser in order to be able to see the GW2BBCode stats.</p>
-				</section> <!-- end #stats -->
-
-				<section id="todo">
-					<h1>To-do</h1>
-
-					<ul>
-						<li>Add the remaining skills, naturally (and keep it all updated).</li>
-						<li>Make sure the tooltip never displays outside of the viewport.</li>
-						<li>Clean out unnecessary MooTools extensions and make a list of which MooTools More modules are required.</li>
-						<li><em>Maybe</em> also support items in addition to skills… that's a <em>lot</em> of work, especially to keep updated, so help will definitely be needed with that.</li>
-					</ul>
-				</section> <!-- end #todo -->
+		<div id="branding">
+			<div>
+				<img src="img/logo-gw2-dragon-bbcode.png" alt="GW2BBCode">
+				<p id="version-label">preview</p>
 			</div>
-		</section> <!-- end #overview -->
+		</div> <!-- end #branding -->
+	</header> <!-- end header -->
 
-		<section id="docs">
-			<h1>Documentation</h1>
-			<p>Hi.</p>
-		</section> <!-- end #docs -->
-
-		<section id="all-skills">
-			<h1>Overview of all available skills</h1>
-			<p>Please enable JavaScript in order to be able to see an overview of all available skills.</p>
-		</section> <!-- end #demo-all-skills -->
-
-		<footer id="main-footer">
-			<div id="logos">
-				<p id="project-by">A project by <a href="http://colinaarts.com" rel="external">Colin Aarts</a></p>
-
-				<a href="http://www.w3.org/html/logo/">
-					<img src="/img/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics">
-				</a>
+	<div id="spotlight">
+		<section id="news">
+			<header>
+				<h1>News &amp; updates</h1>
+				<ul class="toolbar">
+					<li class="twitter"><a href="https://twitter.com/GW2BBCode" class="twitter-follow-button"
+							data-show-count="false" data-show-screen-name="false" data-width="100px"
+							data-align="right">Follow @GW2BBCode</a>
+						<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+					</li>
+					<li class="atom"><a title="Atom feed for news and updates" href="/updates.atom">Atom feed</a></li>
+				</ul>
+			</header>
+			<div>
+				<article>
+					<h1>gw2bbcode.com launched!</h1>
+					<p class="pubinfo"><time datetime="2012-01-25">January 25, 2012</time></p>
+					<p>Today marks the birth of gw2bbcode.com, the home of the GW2BBCode project.</p>
+					<p>For now, you can find a preview version of GW2BBCode here, and basic installation and
+						configuration instructions. In the near future, proper documentation will be added.</p>
+					<p>Other things that are planned are a Twitter account for the project, publication of the project
+						to github and a way for users to comment on, and discuss GW2BBCode. A link to a Guild Wars 2
+						Guru Forums discussion thread will be added here later as an update to this post.</p>
+					<p>Update: the ‘official’ <a
+							href="http://www.guildwars2guru.com/forum/gw2bbcode-t26253.html?t=26253"
+							rel="external">discussion and support thread</a> can be found on the Guild Wars 2 Guru
+						Forums.</p>
+					<p>Enjoy!</p>
+				</article>
 			</div>
+		</section> <!-- end #news -->
 
-			<p><small>© 2011 <a href="http://arena.net" rel="external">ArenaNet</a>, Inc. All rights reserved. <a href="http://ncsoft.com" rel="external">NCsoft</a>, the interlocking NC logo, ArenaNet, Arena.net, <a href="http://guildwars.com" rel="external">Guild Wars</a>, Guild Wars Factions, Factions, Guild Wars Nightfall, Nightfall, Guild Wars: Eye of the North, Guild Wars Eye of the North, Eye of the North, <a href="http://guildwars2.com" rel="external">Guild Wars 2</a>, and all associated logos and designs are trademarks or registered trademarks of NCsoft Corporation. All other trademarks are the property of their respective owners.</small></p>
+		<section id="demo">
+			<header>
+				<h1>Demo</h1>
+			</header>
+			<div>
+				<p id="demo-skills">Please enable JavaScript in your browser to be able to see GW2BBCode in action.</p>
+			</div>
+		</section> <!-- end #demo -->
+	</div> <!-- end #spotlight -->
 
-			<p><small><i>Diavlo</i> and <i>Delicious</i> fonts by <a href="http://www.exljbris.com" rel="external">Jos Buivenga (exljbris)</a>.</small></p>
-		</footer> <!-- end footer -->
-	</body>
+	<section id="overview">
+		<div class="panels">
+			<section id="about">
+				<h1>About</h1>
+
+				<p>Despite the name, GW2BBCode is not real <a href="http://en.wikipedia.org/wiki/BBCode"
+						rel="external">BBCode</a>: it does not integrate with any bulletin board systems (forums).
+					Instead, GW2BBCode is a stand-alone (it can work with <em>any</em> site), <a
+						href="http://en.wikipedia.org/wiki/JavaScript" rel="external">JavaScript</a>-based plug-in: all
+					you need to do in order to enable GW2BBCode for your site is include some additional files and do
+					some very simple configuration. More on that in the <a href="#installation">installation
+						section</a>.</p>
+
+				<p>There is one caveat: GW2BBCode is a <a href="http://mootools.net" rel="external">MooTools</a>
+					plug-in. If your site is already using a different JavaScript library, this <em>may</em> cause
+					trouble – and even if it doesn't, including two “general purpose” libraries is generally not a great
+					idea, for various reasons. However, that's just the way it is – the author of GW2BBCode loves
+					MooTools, so when he does hobby projects he uses MooTools. Perhaps he will port GW2BBCode to vanilla
+					JavaScript one day, if and when he feels like it.</p>
+			</section> <!-- end #about -->
+
+			<section id="usage">
+				<h1>Usage</h1>
+
+				<p><code>#{skill name}</code></p>
+
+				<p>GW2BBCode will find text that looks like this and replace it with the appropriate skill icon. That is
+					all.</p>
+
+				<p>Skill names are case-insensitive, and skill names can have aliases (time will tell which aliases are
+					desirable; there are none in the system right now). If a skill name doesn't exist in the datastore,
+					GW2BBCode will simply leave the code untouched.</p>
+
+				<p>Builds and other features aren't supported right now, for obvious reasons. Support for whatever
+					features make sense will be added after Guild Wars 2's launch.</p>
+
+				<p>Technical note: the template for GW2BBCode, as a regular expression, is <code>/#\{(.*?)\}/g</code>.
+					You can customise this through the <a href="#docs">constructor's options object</a> if you want or
+					need to.</p>
+			</section> <!-- end #usage -->
+
+			<section id="installation">
+				<h1>Installation</h1>
+
+				<ol>
+					<li>Include the files found in the download in your page(s). The file
+						<code>GW2BBCode.tools.js</code> is optional; it provides some additional utilities for
+						developers. More on that in the <a href="#docs">documentation</a>. Note that when it comes to
+						MooTools and MooTools More, you can use any version you want equal to or greater than 1.4.0. The
+						files in the download are just for convenience. MooTools should be included first, followed by
+						<code>mootools-extensions.js</code>, <code>Tooltip.js</code>, <code>GW2BBCode.js</code>,
+						<code>GW2BBCode.skills.js</code> and finally <code>GW2BBCode.tools.js</code> if you need it.
+					</li>
+					<li>Initialize GW2BBCode; simplest case: <code>new GW2BBCode(document.body)</code>. The constructor
+						takes two arguments: <i>containers</i>, an element (or elements collection or string selector)
+						and <i>options</i>, an options object. <i>Containers</i> is where GW2BBCode looks for the
+						BBCode, and should resolve to a collection of elements as specific as possible in order to
+						prevent issues with other scripts you may have running (and also for general performance). See
+						the <a href="#docs">documentation</a> for details.</li>
+				</ol>
+			</section> <!-- end #installation -->
+
+			<section id="docs-ref">
+				<h1>Docs</h1>
+				<!-- <p>Please enable JavaScript in your browser to be able to see the GW2BBCode documentation.</p> -->
+				<p>The GW2BBCode documentation is coming soon!</p>
+			</section> <!-- end #docs-ref -->
+
+			<section id="stats">
+				<h1>Stats</h1>
+				<p>Please enable JavaScript in your browser in order to be able to see the GW2BBCode stats.</p>
+			</section> <!-- end #stats -->
+
+			<section id="todo">
+				<h1>To-do</h1>
+
+				<ul>
+					<li>Add the remaining skills, naturally (and keep it all updated).</li>
+					<li>Make sure the tooltip never displays outside of the viewport.</li>
+					<li>Clean out unnecessary MooTools extensions and make a list of which MooTools More modules are
+						required.</li>
+					<li><em>Maybe</em> also support items in addition to skills… that's a <em>lot</em> of work,
+						especially to keep updated, so help will definitely be needed with that.</li>
+				</ul>
+			</section> <!-- end #todo -->
+		</div>
+	</section> <!-- end #overview -->
+
+	<section id="docs">
+		<h1>Documentation</h1>
+		<p>Hi.</p>
+	</section> <!-- end #docs -->
+
+	<section id="all-skills">
+		<h1>Overview of all available skills</h1>
+		<p>Please enable JavaScript in order to be able to see an overview of all available skills.</p>
+	</section> <!-- end #demo-all-skills -->
+
+	<footer id="main-footer">
+		<div id="logos">
+			<p id="project-by">A project by <a href="http://colinaarts.com" rel="external">Colin Aarts</a></p>
+
+			<a href="http://www.w3.org/html/logo/">
+				<img src="/img/html5-badge-h-css3-semantics.png" width="165" height="64"
+					alt="HTML5 Powered with CSS3 / Styling, and Semantics"
+					title="HTML5 Powered with CSS3 / Styling, and Semantics">
+			</a>
+		</div>
+
+		<p><small>© 2011 <a href="http://arena.net" rel="external">ArenaNet</a>, Inc. All rights reserved. <a
+					href="http://ncsoft.com" rel="external">NCsoft</a>, the interlocking NC logo, ArenaNet, Arena.net,
+				<a href="http://guildwars.com" rel="external">Guild Wars</a>, Guild Wars Factions, Factions, Guild Wars
+				Nightfall, Nightfall, Guild Wars: Eye of the North, Guild Wars Eye of the North, Eye of the North, <a
+					href="http://guildwars2.com" rel="external">Guild Wars 2</a>, and all associated logos and designs
+				are trademarks or registered trademarks of NCsoft Corporation. All other trademarks are the property of
+				their respective owners.</small></p>
+
+		<p><small><i>Diavlo</i> and <i>Delicious</i> fonts by <a href="http://www.exljbris.com" rel="external">Jos
+					Buivenga (exljbris)</a>.</small></p>
+	</footer> <!-- end footer -->
+</body>
+
 </html>
